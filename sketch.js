@@ -34,7 +34,8 @@ function setup() {
 	boy.addImage(boy_load);
 	tree.addImage(tree_load);
 	ground = createSprite(2000, 2500, 8000, 70);
-	sling = new Sling(stone.body,{x:200, y:50});
+	sling = new Sling(stone.body,{x:180, y:1300});
+	sling.attach(stone.body);
 	Engine.run(engine);
   
 }
@@ -42,19 +43,19 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background("grey");
   scale(0.27);
   stone.display();
   mango1.display();
   mango2.display();
   mango3.display();
   mango4.display();
+  sling.display();
   drawSprites();
  
 }
 
 function mouseDragged(){
-
         Matter.Body.setPosition(stone.body, {x: mouseX , y: mouseY});
 }
 
